@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+		<!-- ion icon script -->
+		<script
+			type="module"
+			src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+		></script>
+		<script
+			nomodule
+			src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+		></script>
+
+		<style>
+			:root {
+				--black1: #1a1a1d;
+				--darkblue: #001c30;
+				--blue: #08c2ff;
+				--lightgreen: #27e1c1;
+				--white: #ebf4f6;
+			}
+			* {
+				box-sizing: border-box;
+			}
+			body {
+				width: 100vw;
+				height: max-content;
+				font-family: Helvetica;
+				margin: 0;
+				padding: 0;
+				color: var(--white);
+				background-color: var(--darkblue);
+			}
+
+			/* untuk chrome,safari,opera */
+			body::-webkit-scrollbar {
+				display: none;
+			}
+			/* untuk firefox */
+			body {
+				overflow: -moz-scrollbars-none;
+			}
+
+			/* navbar */
+
+			nav {
+				position: sticky;
+				top: 0;
+				padding: 10px 30px;
+				z-index: 2;
+				background-color: rgba(29, 30, 31, 0.5);
+			}
+			.nav-list {
+				display: flex;
+				justify-content: space-between;
+				margin: 10px 20px;
+				align-items: center;
+			}
+			.nav-center a {
+				position: relative;
+				font-size: 18px;
+				padding: 0 20px;
+				text-decoration: none;
+				color: var(--white);
+				transition: all 0.5s;
+			}
+
+			.nav-center a:hover {
+				color: var(--lightgreen);
+			}
+			.nav-list span {
+				font-size: 24px;
+			}
+
+			/* content */
+			.first-content {
+				align-items: center;
+				margin-top: 100px;
+				column-gap: 400px;
+				display: flex;
+				justify-content: center;
+			}
+			.right-content {
+				width: 300px;
+				height: 300px;
+				border-radius: 50%;
+				background-image: url(./img/foto2.jpg);
+				background-size: cover;
+				position: relative;
+				animation: upDown 5s linear infinite;
+				transition: all 0.5s ease-in-out;
+			}
+			@keyframes upDown {
+				0% {
+					top: 0;
+				}
+				25% {
+					top: -15px;
+				}
+				50% {
+					top: 0;
+				}
+				75% {
+					top: 15px;
+				}
+				100% {
+					top: 0;
+				}
+			}
+
+			.left-content {
+				margin-top: 50px;
+			}
+			.left-content p {
+				margin: 0;
+				font-size: 32px;
+			}
+
+			/* name animation */
+			.left-content h2 {
+				color: var(--darkblue);
+				-webkit-text-stroke: 1px var(--blue);
+				font-size: 64px;
+				margin: 0;
+				position: relative;
+			}
+			.left-content h2::before {
+				content: " I Kadek Rastika ";
+				position: absolute;
+				width: 0%;
+				height: 100%;
+				overflow: hidden;
+				color: var(--blue);
+				border-right: 4px solid var(--blue);
+				transition: 1s ease-in-out;
+			}
+			.left-content h2:hover::before {
+				width: 100%;
+				filter: drop-shadow(0 0 20px var(--blue));
+			}
+
+			/* typed */
+			.typed-text p {
+				font-size: 48px;
+			}
+			#target-text {
+				color: var(--lightgreen);
+			}
+			#cursor {
+				color: var(--lightgreen);
+				animation: blink 1s linear infinite;
+			}
+			@keyframes blink {
+				0% {
+					opacity: 100%;
+				}
+				50% {
+					opacity: 0%;
+				}
+			}
+
+			/* motivasi */
+			.motivation {
+				width: 300px;
+			}
+			.motivation:hover {
+				animation: gesek 0.5s linear;
+			}
+			@keyframes gesek {
+				0% {
+					transform: translateX(0);
+				}
+				10% {
+					transform: translateX(-40px);
+				}
+				20% {
+					transform: translateX(0);
+				}
+				30% {
+					transform: translateX(40px);
+				}
+				40% {
+					transform: translateX(0);
+				}
+				50% {
+					transform: translateX(-20px);
+				}
+				60% {
+					transform: translateX(0);
+				}
+				70% {
+					transform: translateX(20px);
+				}
+				80% {
+					transform: translateX(0);
+				}
+				90% {
+					transform: translateX(10px);
+				}
+				100% {
+					transform: translateX(10px);
+				}
+			}
+
+			/* contact person */
+			.contact {
+				margin-top: 30px;
+				display: inline-grid;
+				grid-template-rows: auto auto;
+				row-gap: 10px;
+			}
+			.sosial-media a {
+				padding: 10px;
+				text-decoration: none;
+			}
+			.sosial-media ion-icon {
+				font-size: 32px;
+				color: var(--white);
+				transition: all 0.5s;
+			}
+			.sosial-media ion-icon:hover {
+				transform: translateY(-10px);
+				color: var(--lightgreen);
+				filter: drop-shadow(0 0 10px var(--lightgreen));
+			}
+			.btn-contact-me {
+				font-size: 18px;
+				padding: 10px 20px;
+				border-radius: 12px;
+				border: 2px solid var(--blue);
+				background-color: transparent;
+				color: var(--white);
+				transition: all0.5s ease-in-out;
+			}
+			.btn-contact-me:hover {
+				color: var(--blue);
+				background-color: rgba(183, 206, 228, 0.22);
+			}
+
+			/* contact me */
+			.contact-me {
+				background-color: var(--white);
+				display: none;
+				width: 600px;
+				height: 380px;
+				left: calc(50% - 300px);
+				top: -380px;
+				position: relative;
+				z-index: 3;
+				color: var(--black1);
+				border-radius: 8px;
+			}
+			.contact-me.active {
+				display: block;
+			}
+
+			.nav-contact {
+				margin: 0;
+				background-color: var(--black1);
+				color: var(--white);
+			}
+			.list-nav-contact {
+				display: flex;
+				list-style: none;
+				justify-content: end;
+			}
+			.list-nav-contact li {
+				cursor: pointer;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding: 5px;
+				font-size: 14px;
+			}
+			.close ion-icon {
+				font-size: 20px;
+			}
+			.close:hover {
+				background-color: rgb(234, 59, 59);
+			}
+			.minimize:hover,
+			.full-screen:hover {
+				background-color: rgba(183, 206, 228, 0.263);
+			}
+
+			.form {
+				width: 350px;
+				height: 200px;
+				padding: 10px 30px;
+			}
+			.form label {
+				margin: 10px 0px;
+				font-size: 16px;
+				font-family: Helventica;
+			}
+			.form input {
+				margin: 5px 0px;
+				padding: 5px;
+				width: 100%;
+				height: 20px;
+			}
+			.form button {
+				border: 1px solid;
+				margin-top: 20px;
+				width: 100px;
+				text-align: center;
+				font-size: 14px;
+				border-radius: 8px;
+				font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+			}
+			.user {
+				width: 200px;
+				height: 200px;
+				background-color: #08c2ff;
+			}
+			.header-content {
+				background-image: url(./img/5571.jpg);
+				background-repeat: no-repeat;
+				background-size: cover;
+				position: relative;
+				top: -20px;
+				width: 100%;
+				height: 150px;
+			}
+			.foto {
+				background-image: url(./img/foto1.jpg);
+				background-size: cover;
+				background-position: bottom;
+				position: relative;
+				top: 20px;
+				left: calc(50% - 50px);
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+				background-color: #08c2ff;
+			}
+			.header-foto-name {
+				color: #08c2ff;
+				text-align: center;
+			}
+			.content-contact {
+				position: relative;
+
+				top: -20px;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			/* About me */
+			.content-about-me {
+				margin-top: 180px;
+				font-family: cursive;
+			}
+			.header-about-me {
+				font-size: 42px;
+				text-align: center;
+				color: var(--lightgreen);
+			}
+			.about-me {
+				margin: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+				gap: 50px;
+				padding: 10px 50px;
+			}
+
+			.about-me .galery-foto {
+				width: 650px;
+				height: 400px;
+				padding: 10px;
+				gap: 5px;
+				display: flex;
+			}
+			.galery-foto img {
+				filter: grayscale(100%);
+				border-radius: 8px;
+				flex: 1;
+				height: 100%;
+				object-fit: cover;
+				position: relative;
+				overflow: hidden;
+				transition: all 0.3s ease-in-out;
+			}
+			.galery-foto img:hover {
+				flex: 2;
+				filter: grayscale(0%);
+			}
+			.galery-foto img:first-child {
+				top: -30px;
+			}
+			.galery-foto img:nth-child(3) {
+				top: -30px;
+			}
+
+			.about-me p {
+				font-size: 18px;
+			}
+
+			.about-me-biodata {
+				position: relative;
+				top: 40px;
+				align-items: center;
+				justify-content: center;
+			}
+			.card-me {
+				margin: 15px 0px;
+				width: 650px;
+				height: 250px;
+				perspective: 1000px;
+			}
+			#education,
+			#address {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				transition: transform 0.8s;
+				transform-style: preserve-3d;
+			}
+			#address {
+				height: 150px;
+			}
+
+			.card-front,
+			.card-back {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				backface-visibility: hidden;
+				background: var(--black1);
+				justify-content: center;
+				display: flex;
+				align-items: center;
+				padding: 0px 30px;
+				border-radius: 16px;
+			}
+			.card-back {
+				transform: rotateY(180deg);
+			}
+			.content-card-front,
+			.content-card-back {
+				color: rgba(183, 206, 228, 0.363);
+				transition: all 0.5s ease-in-out;
+			}
+			.content-card-back:hover {
+				color: rgba(183, 206, 228, 0.9);
+			}
+			.header-card-front {
+				font-size: 40px;
+				font-weight: 800;
+				color: rgba(183, 206, 228, 0.9);
+			}
+
+			/* experince */
+			.container-experience {
+				font-family: cursive;
+			}
+			.container-experience h5 {
+				font-size: 42px;
+				text-align: center;
+				color: var(--lightgreen);
+			}
+			.about-me-experience {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.experience {
+				margin: 0px 15px;
+				width: 400px;
+				height: max-content;
+				border-radius: 8px;
+				perspective: 1000px;
+			}
+			.experience:hover {
+				background-color: rgba(125, 130, 135, 0.2);
+				transition: all 0.3s ease-in-out;
+			}
+			.header-experience:hover {
+				transform: translate3d(0px, 0px, 50px);
+				color: var(--lightgreen);
+			}
+			.header-experience {
+				display: flex;
+				padding: 0px 20px;
+				font-size: 32px;
+				margin: 10px;
+				height: 40px;
+				gap: 10px;
+				color: rgba(183, 206, 228, 0.463);
+				transform: translate3d(0px, 0px, 20px);
+				transition: all 0.5s ease-in-out;
+				box-shadow: rgba(4, 132, 55, 0.925) 0px 20px 50px -25px;
+			}
+
+			.experience p {
+				font-size: 16px;
+				margin: 10px 20px;
+				color: rgba(183, 206, 228, 0.463);
+				transform: translate3d(0px, 0px, 20px);
+				transition: all 0.5s ease-in-out;
+			}
+			.experience p:hover {
+				transform: translate3d(0px, 0px, 50px);
+				color: rgba(183, 206, 228, 0.9);
+			}
+			.experience-skill {
+				display: flex;
+				flex-wrap: wrap;
+				margin: 30px 20px;
+				gap: 8px;
+			}
+			.experience-skill span {
+				background: rgba(51, 197, 134, 0.2);
+				color: rgba(183, 206, 228, 0.463);
+				border-radius: 16px;
+				font-size: 16px;
+				padding: 8px 16px;
+				transition: all 0.2s ease-in-out;
+			}
+			.experience-skill span:hover {
+				background: rgba(51, 197, 134, 0.6);
+				color: rgb(204, 230, 255);
+			}
+
+			/* card about me */
+
+			.more-about-me {
+				margin: 100px 0px 200px 0px;
+				position: relative;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				perspective: 1000px;
+				font-family: cursive;
+			}
+			.more-about-me h5 {
+				margin: 20px 0px;
+				font-size: 16px;
+				display: flex;
+				justify-content: center;
+				color: rgba(183, 206, 228, 0.463);
+			}
+			.more-about-me li span {
+				font-size: 14px;
+			}
+			.demo1,
+			.demo2,
+			.demo3,
+			.demo4 {
+				position: absolute;
+				width: 200px;
+				height: 200px;
+				background: var(--black1);
+				border-radius: 8px;
+				transition: all 0.5s ease-in-out;
+				color: rgba(183, 206, 228, 0.363);
+				transform: translate3d(0px, 0px, 20px);
+			}
+
+			.toggle-btn {
+				position: absolute;
+				height: 200px;
+				width: 200px;
+				border-radius: 8px;
+				background: var(--black1);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: var(--black1);
+				z-index: 3;
+			}
+			.active {
+				transition: all 0.5s ease-in-out;
+				transform: translateX(calc(var(--x) * 80px));
+			}
+			.demo1.active:hover,
+			.demo2.active:hover,
+			.demo3.active:hover,
+			.demo4.active:hover {
+				color: var(--white);
+				scale: 1.2;
+				z-index: 2;
+				transition: all 0.6s ease-in-out;
+			}
+
+			/* galery project */
+			.about-container {
+				margin-top: 10px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.galery-title {
+				font-family: cursive;
+				font-size: 32px;
+				font-weight: 900;
+				display: flex;
+				text-align: center;
+				justify-content: center;
+				animation: kelip-kelip 5s ease-in-out infinite;
+			}
+
+			@keyframes kelip-kelip {
+				20% {
+					color: var(--lightgreen);
+				}
+				40% {
+					color: var(--white);
+				}
+				60% {
+					opacity: 0;
+				}
+				80% {
+					color: var(--lightgreen);
+				}
+				100% {
+					color: var(--white);
+				}
+			}
+
+			.galery-project {
+				margin-top: 10px;
+				height: 100vh;
+				display: flex;
+				gap: 30px;
+				justify-content: center;
+				align-items: center;
+				flex-wrap: wrap;
+			}
+			.galery-container {
+				position: relative;
+				top: -120px;
+			}
+			.project {
+				height: 400px;
+				width: 300px;
+				padding: 20px;
+				perspective: 1000px;
+			}
+			.project-card {
+				padding-top: 100px;
+				transform-style: preserve-3d;
+				background-image: url(./img/galaxy.jpg);
+				background-position: center;
+				width: 100%;
+				transition: all 0.5s ease-in-out;
+				border-radius: 10px;
+			}
+			.project-card:hover {
+				background-position: 80% 20%;
+				transform: rotate3d(0.5, 1, 0, 30deg);
+			}
+			.content-project {
+				height: 100%;
+				width: 100%;
+				border-radius: 0 0 10px 10px;
+				background-color: var(--black1);
+				box-shadow: rgba(0, 115, 225, 0.925) 0px 20px 50px -25px;
+				transition: all o.5s ease-in-out;
+				padding: 50px 25px 25px 25px;
+				transform-style: preserve-3d;
+			}
+			.project-title {
+				color: var(--white);
+				font-size: 21px;
+				font-weight: 700;
+				transition: all 0.5s ease-in-out;
+				transform: translate3d(0px, 0px, 20px);
+			}
+			.project-title:hover {
+				transform: translate3d(0px, 0px, 50px);
+				color: var(--lightgreen);
+			}
+			.project-deskripsi {
+				padding-top: 15px;
+				font-size: 12px;
+				transition: all 0.5s ease-in-out;
+				transform: translate3d(0px, 0px, 20px);
+			}
+			.project-deskripsi:hover {
+				transform: translate3d(0px, 0px, 50px);
+			}
+			.see-more {
+				display: block;
+				font-weight: 900;
+				font-size: 11px;
+				text-transform: uppercase;
+				color: var(--blue);
+				padding-top: 15px;
+				transition: all 0.5s ease-in-out;
+				transform: translate3d(0px, 0px, 20px);
+			}
+			.see-more:hover {
+				transform: translate3d(0px, 0px, 50px);
+			}
+			.see-more a {
+				text-decoration: none;
+			}
+			.box-logo {
+				position: absolute;
+				top: 75px;
+				left: 25px;
+				height: 60px;
+				width: 60px;
+				background-color: var(--black1);
+				background-size: cover;
+				background-position: center;
+				border-radius: 10px;
+				padding: 8px;
+				box-shadow: rgb(0, 102, 225) 0px 20px 60px 0px,
+					rgb(0, 200, 225) 0px 18px 36px -18px;
+				transform: translate3d(0px, 0px, 50px);
+			}
+
+			.card2 {
+				filter: hue-rotate(145deg);
+			}
+			.card3 {
+				filter: hue-rotate(210deg);
+			}
+
+			.x2 {
+				filter: hue-rotate(-145deg);
+			}
+			.x3 {
+				filter: hue-rotate(-210deg);
+			}
+
+			/* skills */
+			.header-skills-con {
+				text-align: center;
+				position: relative;
+				left: 20px;
+			}
+			.header-skills-con h5 {
+				color: var(--lightgreen);
+				font-family: cursive;
+				font-size: 32px;
+			}
+			.skills-container {
+				margin: 30px 0;
+				width: 800px;
+				height: 500px;
+				left: calc(50% - 430px);
+				text-align: center;
+				overflow: hidden;
+				position: relative;
+			}
+
+			.skills-container .slide-skills {
+				position: absolute;
+				height: 100px;
+				width: 100px;
+				top: 10%;
+				left: 50%;
+				transform-style: preserve-3d;
+				transform: perspective(1000px);
+				animation: muter-muter 20s linear infinite;
+				z-index: 2;
+			}
+			@keyframes muter-muter {
+				from {
+					transform: perspective(1000px) rotateX(-8deg) rotateY(0deg);
+				}
+				to {
+					transform: perspective(1000px) rotateX(-8deg) rotateY(360deg);
+				}
+			}
+			.slide-skills:hover {
+				animation-play-state: paused;
+			}
+			.skills-container .slide-skills .skills {
+				position: absolute;
+				border: 2px solid var(--lightgreen);
+				inset: 0 0 0 0;
+				transform: rotateY(
+						calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+					)
+					translateZ(300px);
+			}
+			.skills-container .slide-skills .skills img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+			.skills-container .person-skill {
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 100%;
+				height: 100%;
+				padding-bottom: 100px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				z-index: 1;
+			}
+
+			.skills-container .person-skill .model {
+				background-image: url(./img/1\ no\ bg.png);
+				height: 500px;
+				width: 100%;
+				position: absolute;
+				background-repeat: no-repeat;
+				left: 30px;
+				top: -10px;
+				bottom: 0;
+				background-size: auto 130%;
+				background-position: top center;
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<div class="nav-list">
+				<span id="logo">King Jamal</span>
+				<div class="nav-center">
+					<a href="#home">Home</a>
+					<a href="#about">About</a>
+					<a href="#skill">Skills</a>
+				</div>
+			</div>
+		</nav>
+		<div id="home" class="container">
+			<div class="first-content">
+				<div
+					class="left-content"
+					data-aos="fade-up-right"
+					data-aos-duration="3000"
+					data-aos-easing="ease-in-out"
+				>
+					<p>Hello, It's Me</p>
+					<h2>I Kadek Rastika</h2>
+					<div class="typed-text">
+						<p>
+							I'm a <span id="target-text"> </span><span id="cursor"> |</span>
+						</p>
+					</div>
+					<br />
+					<p class="motivation">Hidup Seperti Lary!</p>
+					<div class="contact">
+						<div
+							class="sosial-media"
+							data-aos="fade-up-right"
+							data-aos-duration="3000"
+							data-aos-easing="ease-in-out"
+						>
+							<a href=""><ion-icon name="logo-whatsapp"></ion-icon> </a>
+							<a href=""><ion-icon name="logo-instagram"></ion-icon> </a>
+							<a href=""><ion-icon name="logo-github"></ion-icon> </a>
+						</div>
+						<button
+							class="btn-contact-me"
+							data-aos="fade-up-right"
+							data-aos-duration="3000"
+							data-aos-easing="ease-in-out"
+						>
+							Have question?
+						</button>
+					</div>
+				</div>
+				<div
+					class="right-content"
+					class="left-content"
+					data-aos="fade-up-left"
+					data-aos-duration="3000"
+					data-aos-easing="ease-in-out"
+				></div>
+			</div>
+			<div class="contact-me">
+				<div class="nav-contact">
+					<ul class="list-nav-contact">
+						<li class="minimize">
+							<ion-icon name="remove-outline"></ion-icon>
+						</li>
+						<li class="full-screen">
+							<ion-icon name="square-outline"></ion-icon>
+						</li>
+						<li class="close">
+							<ion-icon name="close-outline"></ion-icon>
+						</li>
+					</ul>
+				</div>
+				<div class="header-content">
+					<div class="foto"></div>
+					<h5 class="header-foto-name">Rastika</h5>
+				</div>
+				<div class="content-contact">
+					<form action="" class="form" method="post">
+						<label for="">Username</label>
+						<br />
+						<input type="text" placeholder="Masukan username" id="username" />
+						<br />
+						<label for="">Pesan atau Pertanyaan</label>
+						<br />
+						<input type="text" placeholder="Masukan Pesan" id="pesan" />
+						<br />
+						<button>Kirim</button>
+					</form>
+					<div class="user">
+						<div class="demo-user"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="about" class="content-about-me">
+			<h1 class="header-about-me">About Me</h1>
+			<div class="about-me">
+				<div class="galery-foto">
+					<img src="./img/1.jpg" alt="" />
+					<img src="./img/foto3.jpg" alt="" />
+					<img src="./img/foto4.jpg" alt="" />
+					<img src="./img/foto5.jpg" alt="" />
+				</div>
+				<div
+					class="about-me-biodata"
+					data-aos="fade-up"
+					data-aos-duration="2000"
+					data-aos-easing="ease-in-out"
+				>
+					<div class="card-me">
+						<div class="card-bio" id="education">
+							<div class="card-front" onclick="flipToBack_Education()">
+								<span class="header-card-front">Education</span>
+							</div>
+							<div class="card-back" onclick="flipToFront_Education()">
+								<p class="content-card-back">
+									Saya sedang menempuh pendidikan di bidang Ilmu Komputer,
+									dengan fokus pada pengembangan perangkat lunak, sistem
+									jaringan, dan kecerdasan buatan.Sebelumnya, saya menyelesaikan
+									pendidikan menengah atas dengan prestasi di bidang teknologi
+									dan sains, yang menjadi fondasi kuat dalam perjalanan akademik
+									saya hingga kini.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="card-me">
+						<div class="card-bio" id="address">
+							<div class="card-front" onclick="flipToBack_Address()">
+								<span class="header-card-front">Address</span>
+							</div>
+							<div class="card-back" onclick="flipToFront_Address()">
+								<p class="content-card-back">
+									Saya tinggal di kec.Abiansemal, Badung, Bali. Lokasi ini
+									mendukung perjalanan saya dalam belajar dan berkarya, sambil
+									tetap memberikan ruang untuk mengeksplorasi hal-hal baru di
+									lingkungan sekitar.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="more-about-me" data-aos="fade-up" data-aos-duration="2000">
+			<div class="demo1" style="--x: -6; --y: 0">
+				<h5>Personality</h5>
+				<ul>
+					<li><span>Profesional dan Analitis</span></li>
+					<li><span>Ambisius dan Berorientasi Hasil</span></li>
+					<li><span>Adaptif dan Problem Solver</span></li>
+				</ul>
+			</div>
+			<div class="demo2" style="--x: -3; --y: 0">
+				<h5>Hobby</h5>
+				<ul>
+					<li><span>Main Game</span></li>
+					<li><span>Bermain Gitar</span></li>
+					<li><span>GYM ?!</span></li>
+				</ul>
+			</div>
+			<div class="demo3" style="--x: 3; --y: 0">
+				<h5>Support System</h5>
+				<ul>
+					<li><span>GPT 4o</span></li>
+					<li><span>Gemini</span></li>
+					<li><span>Tuhan</span></li>
+				</ul>
+			</div>
+			<div class="demo4" style="--x: 6; --y: 0">
+				<h5>Idol</h5>
+				<ul>
+					<li><span>JKT 48</span></li>
+					<li><span>Koster</span></li>
+					<li><span>Giri</span></li>
+				</ul>
+			</div>
+			<div class="toggle-btn">
+				<h5>Need More?</h5>
+			</div>
+		</div>
+		<div class="container-experience">
+			<h5
+				data-aos="fade-up"
+				data-aos-duration="2000"
+				data-aos-easing="ease-in-out"
+			>
+				Experience
+			</h5>
+			<div class="about-me-experience">
+				<div
+					class="experience"
+					data-aos="fade-up-right"
+					data-aos-duration="2000"
+					data-aos-easing="ease-in-out"
+				>
+					<div class="header-experience">
+						<span>Syntax Dasar</span>
+					</div>
+					<p>
+						Menampilkan teks atau data ke layar,Variabel yang digunakan untuk
+						menyimpan data yang dapat digunakan atau dimanipulasi dalam
+						program,Percabangan (Conditional) untuk mengambil keputusan
+						berdasarkan kondisi tertentu menggunakan struktur seperti
+						if-else,Perulangan (Loop) untuk Menjalankan kode yang sama berulang
+						kali, misalnya dengan for atau while.
+					</p>
+					<div class="experience-skill">
+						<span class="ex-s-1">JavaScript</span>
+						<span class="ex-s-2">Python</span>
+						<span class="ex-s-3">PHP</span>
+					</div>
+				</div>
+				<div
+					class="experience"
+					data-aos="fade-up"
+					data-aos-duration="2000"
+					data-aos-easing="ease-in-out"
+				>
+					<div class="header-experience">
+						<span>Matematika Operasial</span>
+					</div>
+					<p>
+						Operasi Dasar seperti enjumlahan (+), pengurangan (-), perkalian
+						(*), dan pembagian (/).Operasi Modulus dan Eksponensial, Pembulatan
+						dan Operasi Lanjutan seperti Fungsi seperti round(), floor(), dan
+						ceil() untuk pembulatan angka.Manipulasi Bilangan seperti Konversi
+						tipe data (misalnya, dari string ke integer).
+					</p>
+					<div class="experience-skill">
+						<span class="ex-s-1">JavaScript</span>
+						<span class="ex-s-2">Python</span>
+						<span class="ex-s-3">PHP</span>
+					</div>
+				</div>
+				<div
+					class="experience"
+					data-aos="fade-up-left"
+					data-aos-duration="2000"
+					data-aos-easing="ease-in-out"
+				>
+					<div class="header-experience">
+						<span>DOM</span>
+					</div>
+					<p>
+						Dengan DOM, saya dapat mengakses dan memanipulasi elemen HTML secara
+						langsung, seperti mengubah teks, atribut, atau gaya menggunakan
+						metode seperti getElementById dan querySelector.DOM juga
+						memungkinkan saya untuk mengelola interaksi pengguna melalui event
+						listener seperti addEventListener, yang digunakan untuk menangani
+						tindakan seperti klik tombol atau masukan formulir.
+					</p>
+					<div class="experience-skill">
+						<span class="ex-s-1">JavaScript</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div
+			class="about-container"
+			data-aos="fade-up"
+			data-aos-duration="2000"
+			data-aos-easing="ease-in-out"
+		>
+			<div class="about-project">
+				<span class="galery-title"> My Project</span>
+			</div>
+		</div>
+		<div
+			class="galery-container"
+			data-aos="fade-up"
+			data-aos-duration="2000"
+			data-aos-easing="ease-in-out"
+		>
+			<div class="galery-project">
+				<div class="project">
+					<div class="project-card">
+						<div class="content-project">
+							<h5 class="project-title">Project PHP</h5>
+							<p class="project-deskripsi">
+								Perhitungan matematika menggunakan syntax dasar PHP dan
+								menggunakan DOM
+							</p>
+							<span class="see-more">See More</span>
+						</div>
+						<div
+							class="box-logo x1"
+							style="background-image: url(./img/logo11.png)"
+						></div>
+					</div>
+				</div>
+
+				<div class="project card2">
+					<div class="project-card">
+						<div class="content-project">
+							<h5 class="project-title">Project Python</h5>
+							<p class="project-deskripsi">
+								Perhitungan matematika menggunakan syntax dasar Python dan
+								menggunakan DOM
+							</p>
+							<span class="see-more"
+								><a href="/MAK KAU HIJAU/lattihan/index.php">see more</a></span
+							>
+						</div>
+						<div
+							class="box-logo x2"
+							style="background-image: url(./img/logo4.png)"
+						></div>
+					</div>
+				</div>
+				<div class="project card3">
+					<div class="project-card">
+						<div class="content-project">
+							<h5 class="project-title">Project JavaScript</h5>
+							<p class="project-deskripsi">
+								Perhitungan matematika menggunakan syntax dasar JavaScript
+							</p>
+							<span class="see-more"><a href="">see more</a></span>
+						</div>
+						<div
+							class="box-logo x3"
+							style="background-image: url(./img/logo5.png)"
+						></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="header-skills-con">
+			<h5>Future Skills</h5>
+		</div>
+		<div id="skill" class="skills-container">
+			<div class="slide-skills" style="--quantity: 10">
+				<div class="skills" style="--position: 1">
+					<img src="./img/logo11.png" alt="" />
+				</div>
+				<div class="skills" style="--position: 2">
+					<img src="./img/logo2.png" alt="" />
+				</div>
+				<div class="skills" style="--position: 3">
+					<img src="./img/logo3.png" alt="" />
+				</div>
+				<div class="skills" style="--position: 4">
+					<img src="./img/logo4.png" alt="" />
+				</div>
+				<div class="skills" style="--position: 5">
+					<img src="./img/logo5.png" alt="" />
+				</div>
+				<div class="skills" style="--position: 6">
+					<img src="./img/logo6.png" alt="" />
+				</div>
+				<div class="skills" style="--position: 7">
+					<img src="./img/logo7.png" alt="" />
+				</div>
+				<div class="skills" style="--position: 8">
+					<img src="./img/logo8.png" alt="" />
+				</div>
+				<div class="skills" style="--position: 9">
+					<img src="./img/logo9.png" alt="" />
+				</div>
+				<div class="skills" style="--position: 10">
+					<img src="./img/logo10.png" alt="" />
+				</div>
+			</div>
+			<div class="person-skill">
+				<div class="model"></div>
+			</div>
+		</div>
+		<script>
+			function sleep(ms) {
+				return new Promise((resolve) => setTimeout(resolve, ms));
+			}
+			const phrases = ["Programmer", "Desainer", "Hacker", "Gamer"];
+			const text = document.querySelector("#target-text");
+
+			let sleepTime = 100;
+			let curPhrasesIndex = 0;
+			const writeLoop = async () => {
+				while (true) {
+					let curWord = phrases[curPhrasesIndex];
+					for (i = 0; i < curWord.length; i++) {
+						text.innerText = curWord.substring(0, i + 1);
+						await sleep(sleepTime);
+					}
+					await sleep(sleepTime * 15);
+					for (i = 0; i > curWord.length; i--) {
+						text.innerText = curWord.substring(0, i - 1);
+						await sleep(sleepTime);
+					}
+					await sleep(sleepTime * 10);
+					if (curPhrasesIndex === phrases.length - 1) {
+						curPhrasesIndex = 0;
+					} else {
+						curPhrasesIndex++;
+					}
+				}
+			};
+			writeLoop();
+			// contact me
+			const contact_Me = document.querySelector(".contact-me");
+			const btn_contact = document.querySelector(".btn-contact-me");
+			const btn_close = document.querySelector(".close");
+			btn_contact.addEventListener("click", () => {
+				contact_Me.classList.add("active");
+			});
+			btn_close.addEventListener("click", () => {
+				contact_Me.classList.remove("active");
+			});
+			// target user
+
+			// about me card
+			let toggleBtn = document.querySelector(".toggle-btn");
+			let menu_1 = document.querySelector(".demo1");
+			let menu_2 = document.querySelector(".demo2");
+			let menu_3 = document.querySelector(".demo3");
+			let menu_4 = document.querySelector(".demo4");
+
+			toggleBtn.addEventListener("click", () => {
+				menu_1.classList.toggle("active");
+				menu_2.classList.toggle("active");
+				menu_3.classList.toggle("active");
+				menu_4.classList.toggle("active");
+				toggleBtn.classList.toggle("active");
+			});
+
+			// card education and address
+			const cardFlip_Education = document.querySelector("#education");
+			function flipToBack_Education() {
+				cardFlip_Education.style.cssText += "transform: rotateY(180deg) ;";
+			}
+			function flipToFront_Education() {
+				cardFlip_Education.style.cssText += "transform: rotateY(0deg) ;";
+			}
+
+			const cardFlip_Address = document.querySelector("#address");
+			function flipToBack_Address() {
+				cardFlip_Address.style.cssText += "transform: rotateY(180deg) ;";
+			}
+			function flipToFront_Address() {
+				cardFlip_Address.style.cssText += "transform: rotateY(0deg) ;";
+			}
+		</script>
+		<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+		<script>
+			AOS.init();
+		</script>
+	</body>
+</html>
